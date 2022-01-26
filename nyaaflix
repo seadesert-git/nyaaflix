@@ -2,7 +2,7 @@
 # Dependencies: grep, sed, peerflix (npm)
 
 # limit show result, change to 1 for selecting only top result
-limit=5
+limit=1
 # proxy nyaa.si site, modify to your preference
 base_url='https://nyaa.iss.one'
 query=$(printf '%s' "$*" | tr ' ' '_')
@@ -11,8 +11,12 @@ anime=$(curl -s $base_url/?q=$query&c=1_2)
 
 echo $anime | grep -Po 'href="/view/[0-9]+" title="[^"]*' | head -n $limit | sed 's@href=\"\/view\/[0-9]*\" title=\"@@g' | nl -s ") "
 
-read -p " Select: > " ch
-echo "Playing $ch"
+if [ $limit -ne 1 ]; then
+  read -p " Select: > " ch
+  echo "Playing $ch"
+else
+  ch=1
+fi
 
 magnet=$(echo $anime | grep -Po "magnet:\?xt=urn:btih:[a-z0-9]*" | head -$ch)
 # plays on mpv, change to --vlc to play on vlc 
