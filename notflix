@@ -1,6 +1,19 @@
 #!/bin/sh
+# Dependencies: grep, sed, peerflix (npm)
 
-query=$(printf '%s' "$*" | tr ' ' '+' )
-movie=$(curl -s https://1337x.wtf/search/$query/1/ | grep -Eo "torrent\/[0-9]{7}\/[a-zA-Z0-9?%-]*/" | head -n 1)
-magnet=$(curl -s https://1337x.wtf/$movie | grep -Po "magnet:\?xt=urn:btih:[a-zA-Z0-9]*" | head -n 1)
-peerflix -k $magnet
+# limit show result, change to 1 for selecting only top result
+limit=5
+# proxy nyaa.si site, modify to your preference
+base_url='https://nyaa.iss.one'
+query=$(printf '%s' "$*" | tr ' ' '_')
+# change 1_2 to 1_4 for raw/without subs
+anime=$(curl -s $base_url/?q=$query&c=1_2)
+
+echo $anime | grep -Po 'href="/view/[0-9]+" title="[^"]*' | head -n $limit | sed 's@href=\"\/view\/[0-9]*\" title=\"@@g' | nl -s ") "
+
+read -p " Select: > " ch
+echo "Playing $ch"
+
+magnet=$(echo $anime | grep -Po "magnet:\?xt=urn:btih:[a-z0-9]*" | head -$ch)
+# plays on mpv, change to --vlc to play on vlc 
+peerflix --mpv -- $magnet
