@@ -12,7 +12,9 @@ This shell script scapes nyaa.si proxy site for magnet links and uses [peerflix]
 
 
 ## Usage
+```
 $ nyaaflix $SEARCH_QUERY
+```
 
 ## Dependencies
 * grep
@@ -26,8 +28,9 @@ $ sudo curl -o /usr/local/bin/nyaaflix https://raw.githubusercontent.com/seadese
 $ sudo chmod +x /usr/local/bin/nyaaflix
 ```
 - To uninstall,
+```
 $ sudo rm /usr/local/bin/nyaaflix
-
+```
 ## License
 This project is licensed under [GPL-3.0](https://raw.githubusercontent.com/Illumina/licenses/master/gpl-3.0.txt).
 
