@@ -2,10 +2,13 @@
 # Dependencies: grep, sed, peerflix (npm)
 
 # limit show result, change to 1 for selecting only top result
-limit=1
+limit=5
+
 # proxy nyaa.si site, modify to your preference
 base_url='https://nyaa.iss.one'
+
 query=$(printf '%s' "$*" | tr ' ' '_')
+
 # change 1_2 to 1_4 for raw/without subs
 anime=$(curl -s $base_url/?q=$query&c=1_2)
 
