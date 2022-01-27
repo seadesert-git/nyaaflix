@@ -16,11 +16,11 @@ echo $anime | grep -Po 'href="/view/[0-9]+" title="[^"]*' | head -n $limit | sed
 
 if [ $limit -ne 1 ]; then
   read -p " Select: > " ch
-  echo "Playing $ch"
 else
   ch=1
 fi
+echo "Playing $ch"
 
-magnet=$(echo $anime | grep -Po "magnet:\?xt=urn:btih:[a-z0-9]*" | head -$ch)
+magnet=$(echo $anime | grep -Po "magnet:\?xt=urn:btih:[a-z0-9]*" | head -$ch | tail -1 )
 # plays on mpv, change to --vlc to play on vlc 
 peerflix --mpv -- $magnet
