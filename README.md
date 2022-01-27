@@ -1,20 +1,20 @@
-<h1 align="center">NYAAFLIX</h1>
+<h1 align="center">nyaaflix</h1>
 <p align="center">Use nyaaflix, a tool to search magnet links from nyaa.si and stream it with peerflix</p>
 
 ### How does this work?
 
 This shell script scapes nyaa.si proxy site for magnet links and uses [peerflix](https://github.com/mafintosh/peerflix) to stream the video from magnet link.
 
-
 ## Usage
-```
+`
 $ nyaaflix $SEARCH_QUERY
-```
+`
 
 ## Dependencies
 * grep
 * sed
-* [peerflix](https://github.com/mafintosh/peerflix) - A tool to stream torrent. `sudo npm install peerflix -g`
+* [peerflix](https://github.com/mafintosh/peerflix) - A tool to stream torrent. 
+`sudo npm install peerflix -g`
 
 ## Installation
 
@@ -23,9 +23,8 @@ $ sudo curl -o /usr/local/bin/nyaaflix https://raw.githubusercontent.com/seadese
 $ sudo chmod +x /usr/local/bin/nyaaflix
 ```
 - To uninstall,
-```
-$ sudo rm /usr/local/bin/nyaaflix
-```
+`$ sudo rm /usr/local/bin/nyaaflix`
+
 ## License
 This project is licensed under [GPL-3.0](https://raw.githubusercontent.com/Illumina/licenses/master/gpl-3.0.txt).
 
