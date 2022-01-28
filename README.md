@@ -1,9 +1,9 @@
 <h1 align="center">nyaaflix</h1>
-<p align="center">Use nyaaflix, a tool to search magnet links from nyaa.si and stream it with peerflix</p>
+<p align="center">nyaaflix, a tool to search anime torrents from nyaa.si and streams it with peerflix</p>
 
 ### How does this work?
 
-This shell script scapes nyaa.si proxy site for magnet links and uses [peerflix](https://github.com/mafintosh/peerflix) to stream the video from magnet link.
+This shell script scapes nyaa.si proxy site for magnet links and uses [peerflix](https://github.com/mafintosh/peerflix) to stream anime from magnet link.
 
 ## Preview
 <p align="center">
@@ -27,9 +27,10 @@ $ nyaaflix $SEARCH_QUERY
 $ sudo curl -o /usr/local/bin/nyaaflix https://raw.githubusercontent.com/seadesert-git/nyaaflix/master/nyaaflix
 $ sudo chmod +x /usr/local/bin/nyaaflix
 ```
-- To uninstall,
+To uninstall,
 `$ sudo rm /usr/local/bin/nyaaflix`
 
 ## License
+
 This project is licensed under [GPL-3.0](https://raw.githubusercontent.com/Illumina/licenses/master/gpl-3.0.txt).
 
