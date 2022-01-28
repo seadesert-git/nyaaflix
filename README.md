@@ -1,5 +1,5 @@
 <h1 align="center">nyaaflix</h1>
-<p align="center">nyaaflix, a tool to search anime torrents from nyaa.si and streams it with peerflix</p>
+<p align="center">nyaaflix, a tool to search and stream anime torrents from nyaa.si using peerflix</p>
 
 ### How does this work?
 
