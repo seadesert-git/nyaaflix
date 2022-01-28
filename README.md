@@ -5,6 +5,11 @@
 
 This shell script scapes nyaa.si proxy site for magnet links and uses [peerflix](https://github.com/mafintosh/peerflix) to stream the video from magnet link.
 
+## Preview
+<p align="center">
+<img src="./preview.gif" alt="Video Preview" width="1280px">
+</p>
+
 ## Usage
 `
 $ nyaaflix $SEARCH_QUERY
